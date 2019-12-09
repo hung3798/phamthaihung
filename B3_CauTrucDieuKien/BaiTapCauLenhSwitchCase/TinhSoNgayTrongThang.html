@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Nhap thang:
+    <input id="thang">
+    <button onclick = "tinhSoNgay();return false;">Tinh So Ngay</button>
+    <p id="ketQua"></p>
+</form>
+<script>
+    function tinhSoNgay() {
+        let nhapThang = parseInt(document.getElementById("thang").value);
+        let soNgay;
+        let ketQua = document.getElementById("ketQua");
+        switch (nhapThang) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 10:
+            case 11:
+            case 12:
+                soNgay = "Thang co 31 ngay";
+                break;
+            case 2:
+                soNgay = "Thang co 28 hoac 29 ngay";
+                break;
+            default:
+                soNgay = "Thang co 30 ngay";
+        }
+        ketQua.innerText =soNgay;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nameCustomer = prompt("Enter Name Customer:");
+    let nameStandar = "";
+    nameCustomer = nameCustomer.trim().toLocaleLowerCase();
+    for (i=0;i<nameCustomer.length;i++) {
+        if (nameCustomer.charAt(i)===" " && nameCustomer.charAt(i+1)===" ") {
+            continue;
+        }
+        if (i===0 || nameCustomer.charAt(i-1)===" ") {
+            nameStandar += nameCustomer.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        nameStandar +=nameCustomer.charAt(i);
+    }
+    nameCustomer = nameStandar;
+
+
+    let addressCustomer = prompt("Enter Address Customer:");
+    let addressStandar = "";
+    addressCustomer = addressCustomer.trim().toLocaleLowerCase();
+    for (i=0; i<addressCustomer.length; i++) {
+        if (addressCustomer.charAt(i)===" " && addressCustomer.charAt(i+1)===" ") {
+            continue;
+        }
+        if (i===0|| addressCustomer.charAt(i-1)===" ") {
+            addressStandar += addressCustomer.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        addressStandar+= addressCustomer.charAt(i);
+    }
+    addressCustomer = addressStandar;
+
+    let typeCustomer = prompt("Enter Type Customer:");
+    let typeCustomerStandar = "";
+    typeCustomer = typeCustomer.charAt(i).toLocaleLowerCase();
+    for (i=0; i<typeCustomer.length; i++) {
+        if (typeCustomer.charAt(i)===" " && typeCustomer.charAt(i+1)===" ") {
+            continue;
+        }
+        if (i===0|| typeCustomer.charAt(i-1)===" ") {
+            typeCustomerStandar += typeCustomer.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        typeCustomerStandar+= typeCustomer.charAt(i);
+    }
+    typeCustomer = typeCustomerStandar;
+
+    let typeRoom = prompt("Enter Type Room:");
+    let typeRoomStandar = "";
+    typeRoom = typeRoom.charAt(i).toLocaleLowerCase();
+    for (i=0; i<typeRoom.length; i++) {
+        if (typeRoom.charAt(i)===" " && typeRoom.charAt(i+1)===" ") {
+            continue;
+        }
+        if (i===0|| typeRoom.charAt(i-1)===" ") {
+            typeRoomStandar += typeRoom.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        typeRoomStandar+= typeRoom.charAt(i);
+    }
+    typeRoom = typeRoomStandar;
+
+    let typeService= prompt("Enter Type Service:");
+    let typeServiceStadar = "";
+    typeService = typeService.charAt(i).toLocaleLowerCase();
+    for (i=0; i<typeService.length; i++) {
+        if (typeService.charAt(i)===" " && typeService.charAt(i+1)===" ") {
+            continue;
+        }
+        if (i===0|| typeService.charAt(i-1)===" ") {
+            typeServiceStadar += typeService.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        typeServiceStadar+= typeService.charAt(i);
+    }
+    typeService = typeServiceStadar;
+
+    let checkValidate = false;
+    let idCard;
+    do {
+        checkValidate = false;
+        idCard = prompt("Enter Id Card Customer:");
+        if (isNaN(idCard)) {
+            alert("Id Card is Invalid!!! Please Try Again");
+            continue;
+        }
+        idCard = Number.parseFloat(idCard);
+        if (!Number.isInteger(idCard)) {
+            alert("Id Card is Invalid!!! Please Try Again");
+            continue;
+        }
+        if (idCard >= 100000000 && idCard <= 999999999) {
+            checkValidate = true;
+        } else {
+            alert("Id Card is Invalid!!! Please Try Again");
+        }
+    }
+    while (!checkValidate);
+
+    let emailCustomer;
+    do {
+        checkValidate = true;
+        emailCustomer = prompt("Enter email Customer:");
+        let coutDoc = 0;
+        let coutAt = 0;
+        for (let i = 0; i < emailCustomer.length; i++) {
+            if (emailCustomer.charAt(i) === "@") {
+                coutAt++;
+            }
+            if (emailCustomer.charAt(i) === ".") {
+                coutDoc++;
+            }
+        }
+        if (coutAt !== 1 || coutDoc < 1) {
+            checkValidate = false;
+            alert("Email s Invalid!!! Please Try Again");
+        }
+    }
+    while (!checkValidate);
+
+    let birthdayCustomer;
+    do {
+        checkValidate = false;
+        birthdayCustomer = prompt("Enter Birthday Customer (dd/MM/YYYY):");
+        if (birthdayCustomer.charAt(2) !== "/" || birthdayCustomer.charAt(5) !== "/") {
+            alert("Email is Invalid!!! Please Try Again");
+        }
+
+        let day = birthdayCustomer.substring(0, 2);
+        let month = birthdayCustomer.substring(3, 5);
+        let year = birthdayCustomer.substring(6, 10);
+        if (!isNaN(day) || !isNaN(month) || !isNaN(year)) {
+            day = Number.parseFloat(day);
+            month = Number.parseFloat(month);
+            year = Number.parseFloat(year);
+            if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                if (day > 0 && day < 32 && month > 0 && month < 13 && year >= 1960 && year < 2000) {
+                    checkValidate = true;
+                }
+            }
+        }
+        if (!checkValidate) {
+            alert("Birthday is Invalid!!! Please Try Again");
+        }
+    }
+    while (!checkValidate) ;
+
+    let discount;
+    do {
+        checkValidate = false;
+        discount = prompt("Enter Discount");
+        if (!isNaN(discount)) {
+            discount = Number.parseFloat(discount);
+            if (discount >= 0) {
+                checkValidate = true;
+            }
+        }
+        if (!checkValidate) {
+            alert("Discount is Invalid!!! Please Try Again");
+        }
+    }
+    while (!checkValidate);
+
+    let numberOfAccompanying;
+    do {
+        checkValidate = false;
+        numberOfAccompanying = prompt("Enter Number Of Accompanying:");
+        if (!isNaN(numberOfAccompanying)) {
+            numberOfAccompanying = Number.parseFloat(numberOfAccompanying);
+            if (numberOfAccompanying >= 0 && Number.isInteger(numberOfAccompanying)) {
+                checkValidate = true;
+            }
+        }
+        if (!checkValidate) {
+            alert("Number Of Accompanying is Invalid!!! Please Try Again");
+        }
+    }
+    while (!checkValidate);
+
+    let rentDays;
+    do {
+        checkValidate = false;
+        rentDays = prompt("Enter Rent Days:");
+        if (!isNaN(rentDays)) {
+            rentDays = Number.parseFloat(rentDays);
+            if (rentDays > 0 && Number.isInteger(rentDays)) {
+                checkValidate = true;
+            }
+        }
+        if (!checkValidate) {
+            alert("Rent Days is Invalid!!! Please Try Again");
+        }
+    }
+    while (!checkValidate);
+
+    alert
+    (
+        "Information Of Customer:\n" +
+        "Name: " + nameCustomer +
+        "\nId Card:" + idCard +
+        "\nBirthday:" + birthdayCustomer +
+        "\nEmail Customer:" + emailCustomer +
+        "\nAddress Customer:" + addressCustomer +
+        "\nType Customer:" + typeCustomer +
+        "\nDiscount" + discount +
+        "\nNumber Of Accompanying:" + numberOfAccompanying +
+        "\nType Room:" + typeRoom +
+        "\nRent Days:" + rentDays+
+        "\nType Service:" + typeService
+
+    )
+</script>
+</body>
+</html>

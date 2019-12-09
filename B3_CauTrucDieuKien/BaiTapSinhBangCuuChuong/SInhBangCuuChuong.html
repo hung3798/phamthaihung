@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let bangCC;
+    bangCC = "<table border='1px' width='1300'>";
+    for (hang=2; hang<=9; hang++) {
+        bangCC += "<tr>";
+        for (cot = 1; cot <=9; cot++) {
+            bangCC += "<td>" +hang+"x"+cot+"="+(hang*cot)+"</td>";
+        }
+        bangCC += "</tr>";
+    }
+    bangCC += "</table>";
+    document.write(bangCC);
+</script>
+</body>
+</html>

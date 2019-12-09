@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Employee.js"></script>
+    <script src="addNewEmployee.js"></script>
+    <script src="DisplayInformationEmployee.js"></script>
+    <script src="editInformationEmployee.js"></script>
+    <script src="deleteInformationEmployee.js"></script>
+</head>
+<body>
+<script>
+    function displayMainMenu() {
+        choose = prompt(
+            "1. Add New Employee\n" +
+            "2. Display Information Employee\n" +
+            "3. Edit Information Employee\n" +
+            "4. Delete Employee\n" +
+            "5. Exit\n");
+        switch (choose) {
+            case "1":
+                addNewEmployee();
+                break;
+            case "2":
+                displayInformationEmployee();
+                break;
+            case "3":
+                editInformationEmployee();
+                break;
+            case "4":
+                deleteInformationEmployee();
+                break;
+            default:
+                alert("fall!!");
+        }
+    }
+    displayMainMenu();
+</script>
+</body>
+</html>

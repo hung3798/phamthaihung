@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    displayMainMenu();
+    let arrCustomer = [];
+    function displayMainMenu() {
+        let chosse = prompt("1. Add New Customer\n2. Display Information Customer\n3. Edit Information Customer" +
+            "\n4. Delete Customer\n5. Exit");
+        switch (chosse) {
+            case "1":
+                addNewCustomer();
+                break;
+            case "2":
+                displayInformationCustomer();
+                break;
+            case "3":
+                editInformationCustomer();
+                break;
+            case "4":
+                deleteCustomer();
+                break;
+            case "5":
+                break;
+            default:
+                displayMainMenu();
+
+        }
+    }
+    function addNewCustomer() {
+        let arrInfoCustomer = [];
+        let nameCustomer = prompt("Enter name customer: ");
+        let birthdayCustomer = prompt("Enter birthday customer: ");
+        let idCard = prompt("Enter id card customer: ");
+        let emailCustomer = prompt("Enter email customer: ");
+        let adressCustomer = prompt("Enter adress customer: ");
+        let typeCustomer = prompt("Enter type customer: ");
+        let discount = prompt("Enter discount: ");
+        let numberOfAccompanying = prompt("Enter number of accompanying: ");
+        let typeRoom = prompt("Enter type room: ");
+        let rentDay = prompt("Enter rent day: ");
+        arrInfoCustomer.push(nameCustomer);
+        arrInfoCustomer.push(birthdayCustomer);
+        arrInfoCustomer.push(idCard);
+        arrInfoCustomer.push(emailCustomer);
+        arrInfoCustomer.push(adressCustomer);
+        arrInfoCustomer.push(typeCustomer);
+        arrInfoCustomer.push(discount);
+        arrInfoCustomer.push(numberOfAccompanying);
+        arrInfoCustomer.push(typeRoom);
+        arrInfoCustomer.push(rentDay);
+        arrInfoCustomer.push();
+        arrCustomer.push(arrInfoCustomer);
+        displayMainMenu();
+    }
+    function saveInfoCustomer() {
+        let resoul = "";
+        for (let i = 0; i < arrCustomer.length; i++) {
+            resoul += "serial " + i + "\n" +
+                "1. Name: " + arrCustomer[i][0] + "\n" + "2. Id card: " + arrCustomer[i][2]+
+            "\n=====================================\n";
+        }
+    }
+    function displayInformationCustomer() {
+        let chosse = prompt("Chosse Customer you want to show" + saveInfoCustomer() + arrCustomer.length + ". Exit");
+        switch (chosse) {
+            case arrCustomer.length + "":
+                displayMainMenu();
+                break;
+            default:
+                showCustomerInfor(chosse);
+        }
+    }
+    function showCustomerInfor(index) {
+        alert(getInformationCustomer(index));
+    }
+    function getInformationCustomer(index) {
+        return "0. Name: " + " " + arrListCustomer[index][0] + "\n"
+            + "1. ID Card: " + " " + arrListCustomer[index][1] + "\n"
+            + "2. Birthday: " + " " + arrListCustomer[index][2] + "\n"
+            + "3. Email: " + " " + arrListCustomer[index][3] + "\n"
+            + "4. Address: " + " " + arrListCustomer[index][4] + "\n"
+            + "5. Type Customer: " + " " + arrListCustomer[index][5] + "\n"
+            + "6. Discount: " + " " + arrListCustomer[index][6] + "\n"
+            + "7. Number Of Accompanying: " + " " + arrListCustomer[index][7] + "\n"
+            + "8. Type Room: " + " " + arrListCustomer[index][8] + "\n"
+            + "9. Rent Days: " + " " + arrListCustomer[index][9] + "\n"
+            + "10. Type Service: " + " " + arrListCustomer[index][10] + "\n"
+            + "============== \n";
+        displayMainMenu();
+    }
+    function editInformationCustomer() {
+        let chosse = prompt("Chosse customer you want to edit:\n" +
+            saveInfoCustomer() + arrCustomer.length + " Exit");
+        switch (chosse) {
+            case arrCustomer.length + "":
+                displayMainMenu();
+                break;
+            default:
+                displayEditCustomer(chosse);
+        }
+    }
+    function displayEditCustomer(index) {
+        let chosse = prompt("Select the item to fix:\n" +
+            saveInfoCustomer() + "Back")
+    }
+    function deleteCustomer() {
+
+    }
+</script>
+</body>
+</html>

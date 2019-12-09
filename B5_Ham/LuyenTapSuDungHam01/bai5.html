@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="enterStar">
+<input type='button' value='Look Star' onclick='lookStar()'>
+<p id="result"></p>
+<script>
+    let galaxy1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe ", "Regulus"];
+    let galaxy2 = ["UrsaMinor", "Tarurus", "Cygnus", "Lyra", "Aquila", "UrsaMajor", "Leo"];
+
+    function lookStar() {
+        let key = document.getElementById("enterStar");
+        let indexStar1 = galaxy1.indexOf(key.value);
+        let indexStar2 = galaxy2.indexOf(key.value);
+        let result = document.getElementById("result");
+        if (indexStar2 != -1) {
+            result.innerText = galaxy1[indexStar2];
+        }
+        else if (indexStar1 != -1) {
+            result.innerText = galaxy2[indexStar1];
+        }
+        else{
+            alert("Khong co gia tri");
+        }
+    }
+</script>
+</body>
+</html>

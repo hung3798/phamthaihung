@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputWeight;
+    let inputHeight
+    let bmi;
+    inputWeight = prompt(" Nhap can nang");
+    inputHeight = prompt(" Nhap chieu cao");
+    bmi = inputWeight / (inputHeight * inputHeight);
+    if (bmi < 18) {
+        document.write("Thieu can");
+    }
+    else if (bmi < 25.0) {
+        document.write("Binh Thuong");
+    }
+    else if (bmi < 30.0) {
+        document.write("Qua nang");
+    }
+    else {
+        document.write("Beo Phi");
+    }
+</script>
+</body>
+</html>

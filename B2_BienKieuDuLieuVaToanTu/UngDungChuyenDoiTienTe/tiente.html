@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Amount:
+    <input id="soluong" >
+    From Curency:
+    <select id ="fromType">
+        <option value="1">VND</option>
+        <option value="2">USD</option>
+    </select>
+    To Currency:
+    <select id="toType">
+        <option value="1">USD</option>
+        <option value="2">VND</option>
+    </select>
+    <button onclick="convert();return false;">Convert</button>
+    <p id="ketqua"></p>
+</form>
+<script>
+    function convert(){
+        let loaiTien = document.getElementById("fromType");
+        let doiQua = document.getElementById("toType");
+        let giatri;
+        if(loaiTien.value==1 && doiQua.value==1){
+            giatri = document.getElementById("soluong").value/23000;
+        }
+        else if(loaiTien.value==2 && doiQua.value==2){
+            giatri = document.getElementById("soluong").value*23000;
+        }
+        else {
+            giatri = document.getElementById("soluong").value
+        }
+        ketqua.innerText = giatri ;
+    }
+</script>
+</body>
+</html>

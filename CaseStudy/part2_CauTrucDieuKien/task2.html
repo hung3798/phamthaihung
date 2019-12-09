@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nameCustomer = "Tran Anh Tuan";
+    let idCard = "184303728";
+    let birthdayCustomer = "06/12/1997";
+    let emailCustomer = "anhtuandt97@gmail.com";
+    let addressCustomer = "Da Nang";
+    let typeCustomer = "Diamond";
+    let discount = 10;
+    let numberOfAccompanying = 2;
+    let typeRoom = "Business";
+    let rentDays = 10;
+    let typeService = "Villa";
+    let totalPays = 500 * Number.parseInt(rentDays) * (1 - Number.parseFloat(discount) / 100);
+    displayMenuMain();
+
+    function displayMenuMain() {
+        choose = prompt(
+            "1. Show Information Customer.\n" +
+            "2. Edit Information Customer.\n"
+        );
+        switch (choose) {
+            case "1":
+                showCustomerInfor();
+                break;
+            case "2":
+                editCustomerInfor();
+                break;
+            default:
+                alert("Fall!!!");
+                break;
+        }
+    }
+
+    function showCustomerInfor() {
+        alert
+        (
+            "Information Of Customer:\n" +
+            "Name: " + nameCustomer +
+            "\nId Card:" + idCard +
+            "\nBirthday:" + birthdayCustomer +
+            "\nEmail Customer:" + emailCustomer +
+            "\nAddress Customer:" + addressCustomer +
+            "\nType Customer:" + typeCustomer +
+            "\nDiscount:" + discount +
+            "\nNumber Of Accompanying:" + numberOfAccompanying +
+            "\nType Room:" + typeRoom +
+            "\nRent Days:" + rentDays +
+            "\nType Service:" + typeService
+        );
+    }
+
+    function editCustomerInfor() {
+        chooseEdit = prompt(
+            "Choose Information Customer You Want Edit:\n" +
+            "1.Name: " + nameCustomer +
+            "\n2.Id Card:" + idCard +
+            "\n3.Birthday:" + birthdayCustomer +
+            "\n4.Email Customer:" + emailCustomer +
+            "\n5.Address Customer:" + addressCustomer +
+            "\n6.Type Customer:" + typeCustomer +
+            "\n7.Discount:" + discount +
+            "\n8.Number Of Accompanying:" + numberOfAccompanying +
+            "\n9.Type Room:" + typeRoom +
+            "\n10.Rent Days:" + rentDays +
+            "\n11.Type Service:" + typeService
+        );
+        processEditCustomerInfor();
+        showCustomerInfor();
+    }
+
+    function processEditCustomerInfor() {
+        switch (chooseEdit) {
+            case "1":
+                nameCustomer = prompt("Enter Name Customer You Want Edit:");
+                break;
+            case "2":
+                idCard = prompt("Enter Id Card Customer You Want Edit:");
+                break;
+            case "3":
+                birthdayCustomer = prompt("Enter Birthday Customer You Want Edit: (dd/MM/YYYY)");
+                break;
+            case "4":
+                emailCustomer = prompt("Enter email Customer You Want Edit:");
+                break;
+            case "5":
+                addressCustomer = prompt("Enter Address Customer You Want Edit:");
+                break;
+            case "6":
+                typeCustomer = prompt("Enter Type Customer You Want Edit:");
+                break;
+            case "7":
+                discount = prompt("Enter Discount You Want Edit:");
+                break;
+            case "8":
+                numberOfAccompanying = prompt("Enter Number Of Accompanying You Want Edit:");
+                break;
+            case "9":
+                typeRoom = prompt("Enter Type Room You Want Edit:");
+                break;
+            case "10":
+                rentDays = prompt("Enter Rent Days You Want Edit:");
+                break;
+            case "11":
+                typeService = prompt("Enter Type Service You Want Edit:");
+                break;
+            default:
+                alert("Fall!!!")
+                break;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Nhap vao Don Vi:
+<input id ="soDonVi">
+    Chuyen Doi
+    <select id ="chuyeDoi">
+        <option value="1">Feet-->Meters</option>
+        <option value="2">Meters-->Feet</option>
+    </select>
+        <button onclick="result();return false;">Result</button>
+        <p id="ketqua"></p>
+</form>
+<script>
+    function result() {
+        let chuyenDoi = document.getElementById("chuyeDoi");
+        let giatri;
+        if(chuyenDoi.value==1) {
+            giatri = document.getElementById("soDonVi").value*0.305;
+        }
+        else if (chuyenDoi.value==2) {
+            giatri = document.getElementById("soDonVi").value*3.279;
+        }
+        ketqua.innerText = giatri;
+    }
+</script>
+</body>
+</html>

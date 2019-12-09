@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    nhap vao: <br>
+   <input type="text" id ="nhapChu">
+    <input type='button' value='Chuyen Doi' onclick='chuyenDoi()'>
+</form>
+<p id ="ketQua"></p>
+<script>
+    var str = document.getElementById("nhapChu");
+    var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    var result = [];
+    function chuyenDoi() {
+        for (var x = 0; x <str.value.length; x++) {
+            if (UPPER.indexOf(str.value[x]) !== -1) {
+                result.push(str.value[x].toLowerCase());
+            } else if (LOWER.indexOf(str.value[x]) !== -1) {
+                result.push(str.value[x].toUpperCase());
+            } else {
+                result.push(str.value[x]);
+            }
+        }
+        document.getElementById("ketQua").innerText = result.join('');
+    }
+
+</script>
+</body>
+</html>

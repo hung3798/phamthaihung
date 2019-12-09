@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="ketqua"></p>
+<form>
+    <input id="number1">
+    <input id="number2">
+</form>
+<from>
+    <button onclick="addition();return false;">Addition(+)</button>
+    <button onclick="substraction();return false;">Substraction(-)</button>
+    <button onclick="multiplication();return false;">Multiplication(X)</button>
+    <button onclick="division();return false;">Division(/)</button>
+</from>
+<script>
+    let so1 = document.getElementById("number1");
+    let so2 = document.getElementById("number2");
+
+    function division() {
+        var giatri = so1.value / so2.value;
+        ketqua.innerText = giatri
+    }
+
+    function substraction() {
+        let giatri = so1.value - so2.value;
+        ketqua.innerText = giatri
+    }
+
+    function multiplication() {
+        let giatri = so1.value * so2.value;
+        ketqua.innerText = giatri
+    }
+
+    function addition() {
+        let nhap1 = parseInt(so1.value);
+        let nhap2 = parseInt(so2.value);
+        let giatri = nhap1 + nhap2;
+        ketqua.innerText = giatri
+    }
+</script>
+</body>
+</html>

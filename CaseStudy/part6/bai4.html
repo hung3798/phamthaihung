@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="Employer.js"></script>
+<script>
+    let employer = new Employer();
+
+    function displayMainMenu() {
+        let chosse = prompt("1. Login" + "\n" +
+            "2. Register" + "\n" + "3. Exit");
+        switch (chosse) {
+            case "1":
+                employer.setName(prompt("nhap ten: "));
+                employer.setLoginId(checkIdCard(prompt("nhap Id: ")));
+                employer.setPassword(prompt("nhap password: "));
+                employer.setIdcard(prompt("nhap Idcard: "));
+                employer.setBirthday(prompt("nhap ngay sinh: "));
+                employer.setSex(prompt("nhap gioi tinh: "));
+                employer.setAdress(prompt("nhap dia chi: "));
+                employer.setNumberphone(checkNumberPhone(prompt("nhap so dien thoai: ")));
+                displayMainMenu();
+
+            case "2":
+                alert("1. ten: " + employer.getName()+ "\n"+
+                    "2. Login id: " + employer.getLoginId()+ "\n"+
+                    "3. Pass: " + employer.getPassWord()+ "\n"+
+                    "4. Idcard: " + employer.getIdcard()+ "\n"+
+                    "5. Birthday: " + employer.getBirthday()+ "\n"+
+                    "6. gioi tinh : " + employer.getSex()+ "\n"+
+                    "7. Dia Chi: " + employer.getAdress()+ "\n"+
+                    "8. SDT: " + employer.getNumberphone()+ "\n"
+                );
+                displayMainMenu();
+            case "3":
+                break;
+            default:
+                displayMainMenu();
+        }
+
+    }
+    displayMainMenu();
+    function checkIdCard(idCard) {
+        regexp = /^[0-9]{8}$/;
+        if (regexp.test(idCard)) {
+            alert("Id Card hop le");
+            return idCard;
+        } else {
+            alert("Id Card khong hop le, vui long nhap lai!!!");
+            checkIdCard(prompt("Enter Id Card Customer:"));
+            return idCard;
+        }
+    }
+
+    function checkNumberPhone(numberPhone) {
+        regexp = /^(096[0-9]{7})|(085[0-9]{7})$/;
+        if (regexp.test(numberPhone)) {
+            return numberPhone;
+        } else {
+            checkNumberPhone(prompt("nhap lai mot SDT hop le: "));
+        }
+    }
+</script>
+</body>
+</html>

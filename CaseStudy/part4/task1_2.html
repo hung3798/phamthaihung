@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNameCustomers = ["Nam","Hoang","Kien","Thinh","Que","Binh","Thanh","Hoa","Mai","Lan"];
+
+    function displayCustomers() {
+        choose = prompt(
+            "1. Add New Customer.\n" +
+            "2. Delete Customer.\n"
+        );
+        switch (choose) {
+            case "1":
+                addCustomer();
+                break;
+            case "2":
+                deleteCustomer();
+                break;
+            default:
+                alert("Fall!!!");
+        }
+    }
+
+    displayCustomers();
+
+    function addCustomer() {
+        let numberName = parseInt(prompt("Enter Number Name:"));
+        for (i=0;i<numberName;i++) {
+            arrNameCustomers[i]= prompt("Add name:");
+        }
+        alert(arrNameCustomers.sort());
+    }
+
+    function deleteCustomer() {
+        alert(arrNameCustomers);
+        let i = parseInt(prompt("Select the location to delete"));
+        arrNameCustomers.splice(i,1);
+        alert(arrNameCustomers);
+    }
+</script>
+</body>
+</html>
