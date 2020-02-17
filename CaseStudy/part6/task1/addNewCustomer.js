@@ -31,7 +31,7 @@ function checkBirthDay(birthDay) {
 }
 
 function checkEmail(email) {
-    regexp = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+    regexp = /^\w{6,20}\.$/;
     if (regexp.test(email)) {
         alert("Email hop le");
         return email;
